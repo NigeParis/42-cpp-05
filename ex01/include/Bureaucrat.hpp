@@ -6,13 +6,14 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:27:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/14 15:42:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:21:31 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
 #define RED "\033[31m"
 #define BLUE "\033[34m"
@@ -22,6 +23,8 @@
 #define LIGHTBLUE "\033[36m"
 #define PINK "\033[35m"
 #define RESET "\033[0m"
+
+class Form;
 
 
 class Bureaucrat {
@@ -43,12 +46,13 @@ class Bureaucrat {
         std::string const &getName(void) const;
         int const &getGrade(void) const;
         void setGrade(int grade);
+        void signForm(Form &form);
         
 
     private:
 
-        std::string name;
-        int grade;
+        std::string name_;
+        int grade_;
 
         
 
