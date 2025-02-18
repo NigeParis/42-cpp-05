@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:06:58 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/17 18:03:17 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:47:44 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,126 @@
 
 int main( void ) {
 
-    std::cout << BLUE << "test 0 : ----------------------------------------" << RESET << std::endl;
+    std::cout << BLUE << "test 0 :  Bureaucrat init good grade ----------------------" << RESET << std::endl;
 
-    try {
-        
-        Bureaucrat test1("Thomas", 1);
-        Bureaucrat test2("Alex", 12);
+    try {  
+        Bureaucrat test1("Thomas", 10);
         std::cout << test1 << std::endl; 
-        Form form("Form_!", 0, 150);
-
-        test1.signForm(form);
-        test1.signForm(form);
-        test2.signForm(form);
-
-        std::cout << form << std::endl;
-
     }
     catch(std::exception &e ) {
-    
-        std::string str = e.what();
-
-
-        if(str.compare(": Form Grade too high") == 0)
-            std::cout << "Form Error:" << e.what() << std::endl;
-        else   
-            std::cout << "Error" << e.what() << std::endl;   
+        std::cout << "Error" << e.what() << std::endl;   
     }
+    std::cout << BLUE << "test 1 :  Bureaucrat init grade too high -----------------" << RESET << std::endl;
+    try {  
+        Bureaucrat test1("ThomasHigh", 0);
+        std::cout << test1 << std::endl; 
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error" << e.what() << std::endl;   
+    }
+    std::cout << BLUE << "test 2 :  Bureaucrat init grade too low -----------------" << RESET << std::endl;
+    try {  
+        Bureaucrat test1("ThomasHigh", 151);
+        std::cout << test1 << std::endl; 
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error" << e.what() << std::endl;   
+    }
+
+    std::cout << BLUE << "test 3 :  Form init values ------------------------------" << RESET << std::endl;
+    try {  
+
+        Form form("Form_name", 2, 130);
+        std::cout << form << std::endl; 
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error" << e.what() << std::endl;   
+    }
+    std::cout << BLUE << "test 4 :  Form init bad values too high -----------------" << RESET << std::endl;
+    try {  
+
+        Form form("Form_name", 1, 0);
+        std::cout << form << std::endl; 
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error" << e.what() << std::endl;   
+    }
+    std::cout << BLUE << "test 5 :  Form init bad values too low ------------------" << RESET << std::endl;
+    try {  
+
+        Form form("Form_name", 1, 151);
+        std::cout << form << std::endl; 
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error" << e.what() << std::endl;   
+    }
+    std::cout << BLUE << "test 6 :  Form signed by bureaucrat + try to sign again-" << RESET << std::endl;
+    try {  
+
+        Bureaucrat Mamoud("Mamoud", 1);
+        std::cout << Mamoud << std::endl; 
+        Form form("Form_name", 5, 150);
+        Mamoud.signForm(form);
+        std::cout << form << std::endl;
+        Mamoud.signForm(form);
+         
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error: " << e.what() << std::endl;   
+    }
+
+    std::cout << BLUE << "test 7 :  Form signed by bureaucrat with grade too low-" << RESET << std::endl;
+    try {  
+
+        Bureaucrat Mamoud("Mamoud", 6);
+        std::cout << Mamoud << std::endl; 
+        Form form("Form_name", 15, 1);
+        std::cout << form << std::endl;
+        Mamoud.signForm(form);
+        Mamoud.signForm(form);
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error: " << e.what() << std::endl;   
+    }
+
+    
+
+    std::cout << BLUE << "test 8 :  Form signed by bureaucrat increment grade" << RESET << std::endl;
+    try {  
+
+        Bureaucrat Mamoud("Mamoud", 6);
+        std::cout << Mamoud << std::endl; 
+        Form form("Form_name", 10, 1);
+        std::cout << form << std::endl;
+        Mamoud.incrementGrade();
+        Mamoud.incrementGrade();
+        Mamoud.incrementGrade();
+        Mamoud.incrementGrade();
+        Mamoud.incrementGrade();
+        std::cout << Mamoud << std::endl; 
+        Mamoud.signForm(form);
+        Mamoud.signForm(form);
+    }
+    catch(std::exception &e ) {
+        std::cout << "Error: " << e.what() << std::endl;   
+    }
+
+    
 
 
     
     return (0);
 }
+
+/*
+
+        
+    Bureaucrat test2("Alex", 1);
+
+    test1.signForm(form);
+    test1.signForm(form);
+    test2.signForm(form);
+
+    std::cout << form << std::endl;
+
+*/
