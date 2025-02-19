@@ -6,39 +6,33 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:03:21 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 17:10:42 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:51:53 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("default", 145, 137), target_("default") {
+ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("default", 145, 137), target_("defaultTarget") {
     std::cout << "default ShrubberyCreationForm constructor" << std::endl;
 };
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &ashrubberycreationform) {
     this->target_ = ashrubberycreationform.target_;
 };
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &ashrubberycreationform) {
+    std::cout << "ShrubberyCreationForm assignement operator called" << std::endl;
     this->target_ = ashrubberycreationform.target_;
     return (*this);
 };
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {std::cout << "ShrubberyCreationForm destructor" << std::endl;};
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
+    std::cout << "ShrubberyCreationForm: destructor called" << std::endl;
+};
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): AForm("ShrubberyCreationForm", 145,137), target_(target) {
     std::cout << "Named Target ShrubberyCreationForm constructor" << std::endl;
 };
 
-void ShrubberyCreationForm::GradeTooHighException(int grade) const {
-    
-    if (grade < 1)
-    throw std::out_of_range(": ShrubberyCreationForm Grade too high");
-};
 
-void ShrubberyCreationForm::GradeTooLowException(int grade) const {
-    
-    if (grade > 150)
-    throw std::out_of_range(": ShrubberyCreationForm Grade too low");
-};
+std::string ShrubberyCreationForm::getTarget(void) const { return(this->target_);};
 
 
 void ShrubberyCreationForm::execute(Bureaucrat const &abureaucrat) const {
@@ -83,12 +77,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const &abureaucrat) const {
                 file.close();
                 std::cout << "File created successfully" << std::endl;
             } else 
-                throw std::logic_error(": file not created");
+                throw std::logic_error("Error: file not created");
 
         } else
-        throw std::logic_error(": ShrubberyCreationForm: Bureaucrat grade to execute too low");
+            throw std::logic_error("Error: ShrubberyCreationForm: Bureaucrat grade to execute too low");
     }
     else
-        throw std::logic_error(": ShrubberyCreationForm not signed");
-
+        throw std::logic_error("Error: ShrubberyCreationForm not signed");
 };
+

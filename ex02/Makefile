@@ -16,7 +16,8 @@ CXX=c++
 
 
 SRC_DIR = src/
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRC += PresidentialPardonForm.cpp
 
 OBJ_DIR = build/
 

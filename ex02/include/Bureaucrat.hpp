@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:27:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 12:09:18 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:55:11 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class Bureaucrat {
         int const &getGrade(void) const;
         void setGrade(int grade);
         void signForm(AForm &form);
+        void executeForm(AForm const & form);
         
 
     private:

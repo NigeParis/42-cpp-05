@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:23:18 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 13:16:45 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:13:06 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm {
         AForm(void);        
         AForm(AForm &Aform);
         AForm &operator=(AForm &Aform);
-        ~AForm(void);        
+        virtual ~AForm(void);        
         AForm(const std::string name, const int gradeToSign, const int gradeToExecute);
         void GradeTooHighException(int grade) const;
         void GradeTooLowException(int grade) const;
@@ -33,7 +33,9 @@ class AForm {
         bool getSignature(void) const;
         int getGradToSign(void) const;
         int getGradToExecute(void) const;
-        virtual void execute(Bureaucrat const &abureaucrat) const = 0;;
+        virtual void execute(Bureaucrat const &abureaucrat) const = 0;
+        virtual std::string getTarget(void) const = 0;
+
 
     private:
 

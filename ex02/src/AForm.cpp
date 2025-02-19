@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:05:19 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 16:39:50 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:19:37 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
             return (*this);
         };
         AForm::~AForm(void) {
-            std::cout << "AForm: " << this->name_ << " destructor" << std::endl;
+            std::cout << "AForm: " << this->name_ << " destructor called" << std::endl;
         };     
 
         AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute): name_(name), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute) {
@@ -74,10 +74,11 @@
 std::ostream &operator<<(std::ostream &outputstream, AForm &form) {
 
     return outputstream 
-    << "AForm name............ : " << form.getName() << std::endl 
+    << "AForm type............ : " << form.getName() << std::endl 
     << "AForm signed.......... : " << form.getSignature() << std::endl
     << "AForm Grade to Sign... : " << form.getGradToSign() << std::endl
-    << "AForm Grade to Execute : " << form.getGradToExecute();
+    << "AForm Grade to Execute : " << form.getGradToExecute() << std::endl
+    << "Target................ : " << form.getTarget();
 
         
 }

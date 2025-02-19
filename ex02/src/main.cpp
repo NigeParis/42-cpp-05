@@ -6,12 +6,14 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:06:58 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 17:14:04 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 15:16:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/Bureaucrat.hpp"
 #include "./include/ShrubberyCreationForm.hpp"
+#include "./include/RobotomyRequestForm.hpp"
+#include "./include/PresidentialPardonForm.hpp"
 #include "./include/AForm.hpp"
 
 
@@ -21,19 +23,17 @@ int main( void ) {
     std::cout << BLUE << "test 1 : Shurubbery  init values ------------------------------" << RESET << std::endl;
     try {  
 
-        Bureaucrat Thomas("Thomas", 137);
+        Bureaucrat Thomas("Thomas", 6);
         std::cout << Thomas << std::endl;
-        ShrubberyCreationForm form2("Tree_House test");
-        ShrubberyCreationForm form = form2;
-        Thomas.signForm(form);
-        std::cout << form << std::endl; 
-        form.execute(Thomas);
+        PresidentialPardonForm form2("Form one");
+        std::cout << form2 << std::endl; 
+        Thomas.signForm(form2);
+        std::cout << form2 << std::endl;
+        Thomas.executeForm(form2); 
     }
     catch(std::exception &e ) {
-        std::cout << "Error" << e.what() << std::endl;   
+        std::cerr << e.what() << std::endl;   
     }
-
-
     
     return (0);
 }

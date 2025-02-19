@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:00:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/18 12:08:27 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:33:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ Bureaucrat::Bureaucrat(std::string const name, int const grade) {
 void Bureaucrat::GradeTooHighException(int grade) const {
 
     if (grade < 1)
-        throw std::out_of_range(": Grade too high");
+        throw std::out_of_range(this->name_ + ": Grade too high");
 };
 
 void Bureaucrat::GradeTooLowException(int grade) const {
 
     if (grade > 150)
-          throw std::out_of_range(": Grade too low");
+          throw std::out_of_range(this->name_ + ": Grade too low");
 };
 
 std::string const &Bureaucrat::getName(void) const {return(this->name_);};
@@ -78,6 +78,14 @@ void Bureaucrat::signForm(AForm &form) {
 
     form.beSigned(*this);
 };
+
+
+void Bureaucrat::executeForm(AForm const & form) {
+
+    form.execute(*this);
+    std::cout << this->name_ << " executed " << form.getName() << std::endl;
+};
+
 
 
 
