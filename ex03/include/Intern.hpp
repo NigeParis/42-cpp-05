@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:40:41 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/24 14:23:29 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:04:33 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ class Intern {
         Intern &operator=(Intern const &intern);
         ~Intern(void);
         AForm* makeForm(std::string const formName, std::string const targetForm);
-
 };
 

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:00:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/19 15:18:38 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:12:16 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &abureaucrat) {
     return(*this);
 };
 
-Bureaucrat::~Bureaucrat(void) {std::cout << "Bureaucrat: " << this->name_ << ": destructor" << std::endl;};
+Bureaucrat::~Bureaucrat(void) {std::cout << RED << "Bureaucrat: " << this->name_ << ": destructor" << RESET << std::endl;};
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) {
 
@@ -82,8 +82,8 @@ void Bureaucrat::signForm(AForm &form) {
 
 void Bureaucrat::executeForm(AForm const & form) {
 
+    std::cout << GREEN << this->name_ << " executed " << form.getName() << RESET << std::endl;
     form.execute(*this);
-    std::cout << this->name_ << " executed " << form.getName() << std::endl;
 };
 
 
