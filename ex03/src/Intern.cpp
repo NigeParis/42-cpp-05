@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:54:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/25 13:31:10 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:53:16 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ int WhichForm(std::string const& formName) {
     }
     return -1;
 }
+
+// int WhichForm(std::string const& formName) {
+//     std::string names[3] = {
+//         "presidential pardon", 
+//         "robotomy request",
+//         "shrubbery creation" 
+//     };
+//     for (int i = 0; i < 3; ++i) 
+//         if (formName == names[i]) return i;
+//     throw std::logic_error("Error: parameter target form not found");
+// }
+
+
+
 
 Intern::Intern(void) {
     std::cout << "Intern: default constructor" << std::endl;
@@ -75,3 +89,16 @@ AForm* Intern::makeForm(std::string const formName, std::string const targetForm
     return((*funcs[funcsNbr])(targetForm));
 
 };
+
+
+// AForm* Intern::makeForm(std::string const formName, std::string const targetForm) {
+
+//     typedef AForm* (FormCreator)(std::string const&);
+//     FormCreator *funcs[3] = {
+        
+//         &Intern::CreatePresidentialPardonForm,
+//         &Intern::CreateRobotomyRequestForm,
+//         &Intern::CreateShrubberyCreationForm        
+//     };
+//     return((*funcs[WhichForm(formName)])(targetForm));
+// };
