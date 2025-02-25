@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:40:41 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/24 16:04:33 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:29:59 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ class Intern {
         Intern &operator=(Intern const &intern);
         ~Intern(void);
         AForm* makeForm(std::string const formName, std::string const targetForm);
-};
 
+    private:
+
+        static AForm* CreatePresidentialPardonForm(std::string const& target);
+        static AForm* CreateRobotomyRequestForm(std::string const& target);
+        static AForm* CreateShrubberyCreationForm(std::string const& target);
+};

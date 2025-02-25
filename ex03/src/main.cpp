@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:06:58 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/24 18:38:07 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:33:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main( void ) {
     try {  
 
         Intern SomeOneRandom;
-        Bureaucrat Thomas("Thomas", 6);
+        Bureaucrat Thomas("Thomas", 5);
         std::cout << Thomas << std::endl;
-        form1 = SomeOneRandom.makeForm("PresidentialPardonForm", "Bender");
+        form1 = SomeOneRandom.makeForm("presidential pardon", "Bender");
         std::cout << PINK << *form1 << RESET << std::endl; 
         Thomas.signForm(*form1);
         std::cout << YELLOW << *form1 << RESET << std::endl; 
@@ -47,7 +47,7 @@ int main( void ) {
         Intern SomeOneRandom;
         Bureaucrat Nigel("Nigel", 5);
         std::cout << Nigel << std::endl;
-        form2 = SomeOneRandom.makeForm("ShrubberyCreationForm", "testTreeForm");
+        form2 = SomeOneRandom.makeForm("shrubbery creation", "testTreeForm");
         std::cout << PINK << *form2 << RESET << std::endl; 
         Nigel.signForm(*form2);
         std::cout << YELLOW << *form2 << RESET << std::endl;
@@ -64,9 +64,9 @@ int main( void ) {
     AForm *form3 = NULL; 
     try {  
         Intern SomeOneRandom;
-        Bureaucrat Thomas("Thomas", 55);
+        Bureaucrat Thomas("Thomas", 45);
         std::cout << Thomas << std::endl;
-        form3 = SomeOneRandom.makeForm("RobotomyRequestForm", "BigRobot");
+        form3 = SomeOneRandom.makeForm("robotomy request", "BigRobot");
         std::cout << PINK << *form3 << RESET << std::endl; 
         Thomas.signForm(*form3);
         std::cout << YELLOW << *form3 << RESET << std::endl;

@@ -6,28 +6,25 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:00:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/19 15:18:38 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:29:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) :name_("default"), grade_(150) {};
-Bureaucrat::Bureaucrat(Bureaucrat const &abureaucrat) {
-    this->name_ = abureaucrat.name_;
+Bureaucrat::Bureaucrat(Bureaucrat const &abureaucrat): name_(abureaucrat.name_) {
     this->grade_ = abureaucrat.grade_;
 };
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &abureaucrat) {
-    this->name_ = abureaucrat.name_;
     this->grade_ = abureaucrat.grade_;
     return(*this);
 };
 
 Bureaucrat::~Bureaucrat(void) {std::cout << "Bureaucrat: " << this->name_ << ": destructor" << std::endl;};
 
-Bureaucrat::Bureaucrat(std::string const name, int const grade) {
+Bureaucrat::Bureaucrat(std::string const name, int const grade): name_(name) {
 
-    this->name_ = name;
     GradeTooHighException(grade);
     GradeTooLowException(grade);
     this->grade_ = grade;     

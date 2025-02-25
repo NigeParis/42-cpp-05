@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:27:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/17 16:21:31 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:17:31 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Bureaucrat {
 
     private:
 
-        std::string name_;
+        const std::string name_;
         int grade_;
 
         
