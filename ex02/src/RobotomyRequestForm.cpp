@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:38:46 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/19 15:07:40 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:35:46 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void RobotomyRequestForm::execute(Bureaucrat const &abureaucrat) const {
 
         if (abureaucrat.getGrade() <= 45) {
 
-            std::cout << "Drillllllll drilllliiing #***#! vrrrrrrrrrr" << std::endl;
+            std::cout << GREEN << "Drillllllll drilllliiing #***#! vrrrrrrrrrr" << RESET << std::endl;
 
             if(randomNumber %2 == 0) {
 
-                std::cout << this->target_ << " has been robotomized successfully 50% of the time" << std::endl;
+                std::cout << GREEN << this->target_ <<  " has been robotomized successfully 50% of the time"  << RESET << std::endl;
             }else {
             
-                std::cout << this->target_ << " the robotomy failed." << std::endl;
+                std::cout << GREEN << this->target_ << " the robotomy failed."  << RESET << std::endl;
             }
         } else
             throw std::logic_error("Error: RobotomyRequestForm: Bureaucrat grade to execute too low");
