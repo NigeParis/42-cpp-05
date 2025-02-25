@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:03:21 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/19 14:51:53 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:59:51 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("default", 145, 137), target_("defaultTarget") {
     std::cout << "default ShrubberyCreationForm constructor" << std::endl;
 };
+
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &ashrubberycreationform) {
     this->target_ = ashrubberycreationform.target_;
 };
+
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &ashrubberycreationform) {
     std::cout << "ShrubberyCreationForm assignement operator called" << std::endl;
     this->target_ = ashrubberycreationform.target_;
     return (*this);
 };
+
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
     std::cout << "ShrubberyCreationForm: destructor called" << std::endl;
 };
@@ -31,9 +34,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): AForm("S
     std::cout << "Named Target ShrubberyCreationForm constructor" << std::endl;
 };
 
-
 std::string ShrubberyCreationForm::getTarget(void) const { return(this->target_);};
-
 
 void ShrubberyCreationForm::execute(Bureaucrat const &abureaucrat) const {
 

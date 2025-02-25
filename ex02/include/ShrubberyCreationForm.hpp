@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 12:52:11 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/19 14:51:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:44:38 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include "AForm.hpp"
 
 class ShrubberyCreationForm: public AForm {
-
 
     public:
 
@@ -37,3 +36,4 @@ class ShrubberyCreationForm: public AForm {
         std::string target_;
 
 };
+

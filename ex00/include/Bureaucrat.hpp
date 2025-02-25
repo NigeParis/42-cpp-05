@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:27:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/25 10:19:18 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:42:01 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ class Bureaucrat {
         const std::string name_;
         int grade_;
 
-        
-
-    
 };
 
 std::ostream &operator<<(std::ostream &outputstream, Bureaucrat &abureaucrat);
