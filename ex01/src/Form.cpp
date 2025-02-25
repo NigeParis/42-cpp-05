@@ -6,18 +6,19 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:05:19 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/25 13:59:20 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:09:02 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/Form.hpp"
 
-Form::Form(void): name_("default"),signature_(false),gradeToSign_(150), gradeToExecute_(150){
+Form::Form(void): name_("default"),signature_(false),gradeToSign_(150), gradeToExecute_(150) {
     std::cout << "default form constructor" << std::endl;
 };        
 
-Form::Form(Form &form): name_(form.name_),signature_(false),gradeToSign_(form.gradeToSign_), gradeToExecute_(form.gradeToExecute_) {
-    std::cout << "form copy constructor" << std::endl;
+Form::Form(Form &form): name_(form.name_),signature_(false),gradeToSign_(form.gradeToSign_), 
+    gradeToExecute_(form.gradeToExecute_) {
+        std::cout << "form copy constructor" << std::endl;
 };
 
 Form &Form::operator=(Form &form) {
@@ -31,14 +32,15 @@ Form::~Form(void) {
     std::cout << "Form: " << this->name_ << " destructor" << std::endl;
 };     
 
-Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute): name_(name), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute) {
+Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute): name_(name), 
+    gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute) {
    
-    std::cout << "initialised form constructor" << std::endl;
-    this->signature_ = false;
-    GradeTooHighException(gradeToSign);
-    GradeTooHighException(gradeToExecute);
-    GradeTooLowException(gradeToSign);
-    GradeTooLowException(gradeToExecute);
+        std::cout << "initialised form constructor" << std::endl;
+        this->signature_ = false;
+        GradeTooHighException(gradeToSign);
+        GradeTooHighException(gradeToExecute);
+        GradeTooLowException(gradeToSign);
+        GradeTooLowException(gradeToExecute);
 };
         
 void Form::GradeTooHighException(int grade) const {
@@ -58,11 +60,13 @@ void Form::beSigned(Bureaucrat &abureaucrat) {
             this->signature_ = true;
             std::cout << abureaucrat.getName() << " signed " << this->name_ << std::endl;
         } else {
-            std::string message = (abureaucrat.getName() + " couldn't sign " + this->getName() + " because grade to sign too low");
-            throw std::logic_error(message);
+            std::string message = (abureaucrat.getName() + " couldn't sign " + this->getName() 
+            + " because grade to sign too low");
+                throw std::logic_error(message);
         }
     } else {
-        std::string message = (abureaucrat.getName() + " couldn't sign " + this->getName() + " because already signed");
+        std::string message = (abureaucrat.getName() + " couldn't sign " + this->getName() 
+        + " because already signed");    
         throw std::logic_error(message);
     }
 };
