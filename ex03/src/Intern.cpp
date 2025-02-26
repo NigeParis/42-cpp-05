@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:54:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/02/25 16:53:16 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/02/26 09:46:29 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,8 @@ Intern::Intern(Intern const &other) {
     *this = other;
 };
 
-Intern &Intern::operator=(Intern const &other) {
+Intern &Intern::operator=(Intern const &) {
     std::cout << "Intern: copy assignement called" << std::endl;
-    (void) other;
     return (*this);
 };
 
