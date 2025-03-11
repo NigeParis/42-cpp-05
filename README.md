@@ -184,3 +184,49 @@ The `AForm` class has the following attributes:
 
 ---
 
+
+# Exercise 03: At least this beats coffee-making
+
+This exercise introduces the `Intern` class, which simplifies the creation of forms for bureaucrats. The intern is responsible for generating specific types of forms based on given input, avoiding repetitive tasks for the bureaucrats.
+
+---
+
+## Exercise Overview
+
+In this exercise, you will:
+- Implement the `Intern` class, which has no name, grade, or unique attributes.
+- Add the `makeForm()` function to the `Intern` class to dynamically create form objects.
+- Use polymorphism to return forms of different derived classes of `AForm` based on the name provided.
+- Ensure proper error handling when invalid form names are passed.
+
+---
+
+## Class Design
+
+### Intern Class
+
+The `Intern` class has:
+- **No attributes**: The intern is only responsible for form creation.
+- **`makeForm()` Function**:
+  - Takes two strings: the name of the form and the target.
+  - Returns a pointer to a dynamically allocated `AForm` object.
+  - Prints a message when a form is successfully created, e.g., `Intern creates <form>`.
+  - Throws an error or handles cases where the form name is invalid.
+
+---
+
+## Implementation Details
+
+1. **Valid Form Names**:
+   - `ShrubberyCreationForm`: Creates a form to plant ASCII trees.
+   - `RobotomyRequestForm`: Creates a form to attempt robotomization.
+   - `PresidentialPardonForm`: Creates a form to issue a pardon.
+
+2. **Avoiding `if/else` Chains**:
+   - Use an elegant approach, such as an array of function pointers or a lookup table, to map form names to form constructors.
+
+3. **Dynamic Memory Management**:
+   - Ensure forms are created dynamically and returned as pointers.
+   - Remember to delete any allocated memory to prevent leaks.
+
+---
