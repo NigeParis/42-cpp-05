@@ -109,7 +109,7 @@ Update the `Bureaucrat` class:
   - Print an error message with the reason if the signing fails.
 
 
- # CPP Module 05 - Exercise 02: No, you need form 28B, not 28C...
+ # Exercise 02: No, you need form 28B, not 28C...
 
 This exercise expands upon the concepts from previous exercises by creating a hierarchy of forms that perform specific actions. You will work with abstract and concrete classes, implement polymorphism, and use exception handling to manage edge cases.
 
