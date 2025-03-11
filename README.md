@@ -38,3 +38,16 @@ The exercise also emphasizes:
 
 ### **Overloaded Operators**
 - Overload the `<<` operator to allow formatted output:
+
+
+### **Exception Handling**
+- Demonstrate exceptions in the `main.cpp` file using `try` and `catch` blocks:
+```cpp
+try {
+    Bureaucrat john("John", 1);
+    john.incrementGrade(); // Throws GradeTooHighException
+} catch (const std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+}
+```
+
