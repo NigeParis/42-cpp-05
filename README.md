@@ -51,7 +51,7 @@ try {
 }
 ```
 
-# CPP Module 05 - Exercise 01: Form up, maggots!
+# Exercise 01: Form up, maggots!
 
 Welcome to Exercise 01 of CPP Module 05. This exercise builds upon the previous one by introducing the concept of forms that can be signed and executed by bureaucrats. The goal is to implement a robust and exception-safe system to handle this process.
 
