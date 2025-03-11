@@ -51,3 +51,59 @@ try {
 }
 ```
 
+# CPP Module 05 - Exercise 01: Form up, maggots!
+
+Welcome to Exercise 01 of CPP Module 05. This exercise builds upon the previous one by introducing the concept of forms that can be signed and executed by bureaucrats. The goal is to implement a robust and exception-safe system to handle this process.
+
+---
+
+## Exercise Overview
+
+In this exercise, you will:
+- Create and manage a **Form** class.
+- Implement validation mechanisms with custom exceptions: `GradeTooHighException` and `GradeTooLowException`.
+- Handle form signing using the `Bureaucrat` class from the previous exercise.
+- Throw and catch exceptions to manage edge cases gracefully.
+
+---
+
+## Class Design
+
+### Form Class
+
+The `Form` class has the following attributes:
+- `name` (constant `std::string`): The name of the form.
+- `isSigned` (boolean): Indicates whether the form is signed (default: `false` at construction).
+- `gradeToSign` (constant `int`): The grade required to sign the form.
+- `gradeToExecute` (constant `int`): The grade required to execute the form.
+
+### Exceptions
+You will define two exceptions within the `Form` class:
+- `GradeTooHighException`: Thrown when a grade is too high.
+- `GradeTooLowException`: Thrown when a grade is too low.
+
+---
+
+## Member Functions
+
+1. **Constructor**:
+   - Initialize all private attributes and ensure that the grades are within the valid range.
+
+2. **`beSigned(Bureaucrat &bureaucrat)`**:
+   - Updates the `isSigned` status if the `Bureaucrat`'s grade is high enough.
+   - Throws a `GradeTooLowException` if the grade is insufficient.
+
+3. **Getters**:
+   - Provide access to all private attributes (`getName()`, `getIsSigned()`, `getGradeToSign()`, `getGradeToExecute()`).
+
+4. **Overloaded `<<` Operator**:
+   - Outputs all the form's attributes in a human-readable format.
+
+---
+
+## Bureaucrat Integration
+
+Update the `Bureaucrat` class:
+- Modify the `signForm()` function to use `Form::beSigned()`:
+  - Print a message if the form is successfully signed.
+  - Print an error message with the reason if the signing fails.
